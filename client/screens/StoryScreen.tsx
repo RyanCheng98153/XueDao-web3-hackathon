@@ -60,8 +60,8 @@ const StoryScreen: React.FC = () => {
 
   const renderPostItem = ({ item }: { item: Story }) => {
     // Find the profile corresponding to the username
-    const userProfile:Profile|undefined = initProfiles.find(profile => profile.name === item.username);
-  
+    const userProfile: Profile | undefined = initProfiles.find(profile => profile.name === item.username);
+
     return (
       <View style={styles.storyContainer}>
         <View style={styles.userContainer}>
@@ -89,23 +89,32 @@ const StoryScreen: React.FC = () => {
         <Text style={styles.postButtonText}>Post</Text>
       </TouchableOpacity>
 
-      <Modal visible={isModalVisible} animationType="slide">
-        <View style={styles.modalContainer}>
-          <TextInput
-            style={styles.input}
-            multiline
-            placeholder="Write your story..."
-            value={storyText}
-            onChangeText={setStoryText}
-          />
-          <TextInput
-            style={styles.input}
-            placeholder="Enter image URI..."
-            value={imageURI}
-            onChangeText={setImageURI}
-          />
-          <Button title="Post" onPress={handlePostStory} />
-          <Button title="Cancel" onPress={toggleModal} />
+      <Modal visible={isModalVisible} animationType="slide" transparent>
+        <View style={styles.modalBackground}>
+          <View style={styles.modalContainer}>
+            <Text style={styles.modalHeading}>Create a new story</Text>
+            <TextInput
+              style={styles.input}
+              multiline
+              placeholder="Write your story..."
+              value={storyText}
+              onChangeText={setStoryText}
+            />
+            <TextInput
+              style={styles.input}
+              placeholder="Enter image URI..."
+              value={imageURI}
+              onChangeText={setImageURI}
+            />
+            <View style={styles.buttonContainer}>
+              <TouchableOpacity style={styles.modalButton} onPress={handlePostStory}>
+                <Text style={styles.modalButtonText}>Post</Text>
+              </TouchableOpacity>
+              <TouchableOpacity style={styles.modalCancelButton} onPress={toggleModal}>
+                <Text style={styles.modalCancelButtonText}>Cancel</Text>
+              </TouchableOpacity>
+            </View>
+          </View>
         </View>
       </Modal>
     </LinearGradient>
@@ -192,14 +201,24 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: 'bold',
   },
-  modalContainer: {
+  modalBackground: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    marginHorizontal: 20,
+    backgroundColor: 'rgba(0, 0, 0, 0.5)',
+  },
+  modalContainer: {
+    width: '90%',
     backgroundColor: 'white',
     borderRadius: 10,
     padding: 20,
+    alignItems: 'center',
+  },
+  modalHeading: {
+    fontSize: 20,
+    fontWeight: 'bold',
+    marginBottom: 20,
+    color: '#333',
   },
   input: {
     width: '100%',
@@ -210,4 +229,38 @@ const styles = StyleSheet.create({
     minHeight: 50,
     borderRadius: 5,
   },
+  buttonContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    width: '100%',
+  },
+  modalButton: {
+    flex: 1,
+    backgroundColor: '#FF6F61',
+    paddingVertical: 10,
+    paddingHorizontal: 20,
+    borderRadius: 5,
+    marginRight: 10,
+    alignItems: 'center',
+  },
+  modalButtonText: {
+    color: 'white',
+    fontSize: 16,
+    fontWeight: 'bold',
+  },
+  modalCancelButton: {
+    flex: 1,
+    backgroundColor: '#ccc',
+    paddingVertical: 10,
+    paddingHorizontal: 20,
+    borderRadius: 5,
+    marginLeft: 10,
+    alignItems: 'center',
+  },
+  modalCancelButtonText: {
+    color: '#333',
+    fontSize: 16,
+    fontWeight: 'bold',
+  },
 });
+
