@@ -86,7 +86,7 @@ const StoryScreen: React.FC = () => {
         data={posts}
         renderItem={renderPostItem}
         keyExtractor={(item) => item.id}
-        ListHeaderComponent={<Text style={styles.heading}>Stories</Text>}
+        ListHeaderComponent={<Text style={styles.heading}>Heartbeat in life</Text>}
       />
       
       <TouchableOpacity style={styles.postButton} onPress={toggleModal}>
@@ -128,7 +128,7 @@ const styles = StyleSheet.create({
     paddingTop: 20,
   },
   heading: {
-    marginTop: 12,
+    marginTop: 14,
     fontSize: 24,
     fontWeight: 'bold',
     marginBottom: 8,

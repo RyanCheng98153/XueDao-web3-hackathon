@@ -4,7 +4,7 @@ import { View, Text, Button, StyleSheet } from 'react-native';
 const LoginPage = ({ navigation }: any) => {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Welcome to LoveApp</Text>
+      <Text style={styles.title}>Welcome to HeartBeat !</Text>
       <Button
         title="Enter"
         onPress={() => navigation.navigate('MainTabs')}
@@ -24,7 +24,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#ffe6e6',
   },
   title: {
-    fontSize: 32,
+    fontSize: 30,
     marginBottom: 20,
     color: '#ff5c5c',
   },
