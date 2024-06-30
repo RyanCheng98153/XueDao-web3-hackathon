@@ -5,7 +5,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import LoginPage from './screens/LoginPage';
 import PairScreen from './screens/PairScreen';
 import ChatroomScreen from './screens/ChatRoomScreen';
-import AddStoryScreen from './screens/AddStoryScreen';
+import AddStoryScreen from './screens/StoryScreen';
 import PetScreen from './screens/PetScreen';
 import ProfileScreen from './screens/ProfileScreen';
 import { KeyboardAvoidingView, Platform } from 'react-native';
