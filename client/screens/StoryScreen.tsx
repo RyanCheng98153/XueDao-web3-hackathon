@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { View, Text, StyleSheet, FlatList, TouchableOpacity, Modal, TextInput, Image, Button, Dimensions, Alert } from 'react-native';
+import { LinearGradient } from 'expo-linear-gradient';
 import { Profile } from '../components/interfaces';
 import { initProfiles } from '../components/initprofiles';
 
@@ -69,19 +70,14 @@ const StoryScreen: React.FC = () => {
         </View>
         <View style={styles.messageContainer}>
           <Text style={styles.storyText}>{item.content}</Text>
-          { item.image != null 
-            ? item.image && <Image source={{ uri: item.image }} style={styles.storyImage} />
-            : null
-          }
-          {}
+          {item.image && <Image source={{ uri: item.image }} style={styles.storyImage} />}
         </View>
       </View>
     );
   };
-  
 
   return (
-    <View style={styles.container}>
+    <LinearGradient colors={['#FFDEE9', '#B5FFFC']} style={styles.gradientContainer}>
       <FlatList
         data={posts}
         renderItem={renderPostItem}
@@ -112,7 +108,7 @@ const StoryScreen: React.FC = () => {
           <Button title="Cancel" onPress={toggleModal} />
         </View>
       </Modal>
-    </View>
+    </LinearGradient>
   );
 };
 
@@ -121,9 +117,8 @@ export default StoryScreen;
 // Styles
 const { width } = Dimensions.get('window');
 const styles = StyleSheet.create({
-  container: {
+  gradientContainer: {
     flex: 1,
-    backgroundColor: '#fff',
     paddingHorizontal: 20,
     paddingTop: 20,
   },
@@ -132,12 +127,22 @@ const styles = StyleSheet.create({
     fontSize: 24,
     fontWeight: 'bold',
     marginBottom: 8,
+    color: '#333',
+    textAlign: 'center',
   },
   storyContainer: {
+    backgroundColor: 'white',
+    borderRadius: 10,
     paddingVertical: 10,
     paddingHorizontal: 10,
     borderBottomWidth: 1,
     borderBottomColor: '#ccc',
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.1,
+    shadowRadius: 5,
+    elevation: 3,
+    marginBottom: 10,
   },
   userContainer: {
     flexDirection: 'row',
@@ -152,12 +157,14 @@ const styles = StyleSheet.create({
   },
   username: {
     fontWeight: 'bold',
+    color: '#555',
   },
   messageContainer: {
     marginLeft: 50, // Adjust as needed for spacing between user info and message
   },
   storyText: {
     fontSize: 16,
+    color: '#333',
   },
   storyImage: {
     width: width - 70,
@@ -170,20 +177,29 @@ const styles = StyleSheet.create({
     position: 'absolute',
     bottom: 20,
     right: 20,
-    backgroundColor: 'blue',
+    backgroundColor: '#FF6F61',
     paddingVertical: 10,
     paddingHorizontal: 20,
-    borderRadius: 5,
+    borderRadius: 30,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.3,
+    shadowRadius: 3,
+    elevation: 5,
   },
   postButtonText: {
     color: 'white',
     fontSize: 16,
+    fontWeight: 'bold',
   },
   modalContainer: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
     marginHorizontal: 20,
+    backgroundColor: 'white',
+    borderRadius: 10,
+    padding: 20,
   },
   input: {
     width: '100%',
@@ -192,5 +208,6 @@ const styles = StyleSheet.create({
     padding: 10,
     marginBottom: 10,
     minHeight: 50,
+    borderRadius: 5,
   },
 });
