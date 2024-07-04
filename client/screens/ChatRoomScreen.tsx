@@ -3,7 +3,7 @@ import { View, Text, StyleSheet, FlatList, TextInput, TouchableOpacity, Image, K
 import { Profile, Message } from '../components/interfaces';
 import { initProfiles } from '../components/initprofiles';
 
-const ChatroomScreen = () => {
+const ChatroomScreen: React.FC  = () => {
   const [messages, setMessages] = useState<Message[]>([]);
   const [inputMessage, setInputMessage] = useState('');
   const [profiles, setProfiles] = useState<Profile[]>(initProfiles);
