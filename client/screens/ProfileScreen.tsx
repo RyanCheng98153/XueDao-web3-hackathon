@@ -24,7 +24,7 @@ const ProfileScreen: React.FC<ProfileScreenProps> = () => {
     gender: 'Male',
     introduction: 'Hello, I am John Doe.',
     petInteractionRecord: 10,
-    petLevel: 5,
+    petLevel: 3,
     photoUrl: null, // Placeholder for photo URL
   });
 

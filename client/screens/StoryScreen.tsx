@@ -16,8 +16,8 @@ interface Story {
 const initPosts: Story[] = [
   {
     id: '1',
-    username: '沈在允',
-    content: '今天天氣真好，出去散步了！',
+    username: 'R',
+    content: 'It would be a great sunny day to take a walk around！',
     image: null,
   },
   {
@@ -25,6 +25,12 @@ const initPosts: Story[] = [
     username: 'Joey',
     content: 'Working on a new React Native project.',
     image: 'https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExandpZHE5Z3NqY2dlMDd2b2lpaWtjajY5cGdxZGk5NmEycHQzNWVkeCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/2IudUHdI075HL02Pkk/giphy.webp',
+  },
+  {
+    id: '3',
+    username: 'Ali',
+    content: 'New Day in new semester',
+    image: null,
   },
   // Add more posts as needed
 ];

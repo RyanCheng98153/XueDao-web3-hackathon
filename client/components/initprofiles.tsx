@@ -9,9 +9,9 @@ interface Profile {
 export const initProfiles: Profile[] = [
     {
       id: '1',
-      name: '沈在允',
+      name: 'Steve',
       age: '20',
-      bio: '21 公里遠',
+      bio: 'Skateboarding',
       image: 'https://i.pinimg.com/736x/b4/bf/ac/b4bfac61b71b1d2a9ff18270edbd0bec.jpg',
     },
     {
@@ -30,7 +30,7 @@ export const initProfiles: Profile[] = [
     },
     {
       id: '4',
-      name: '彥祥',
+      name: 'John Doe',
       age: '28',
       bio: 'UI/UX Designer',
       image: 'https://i.pinimg.com/564x/85/dc/f0/85dcf0be2732ca9f8cfaf89028d8855c.jpg',

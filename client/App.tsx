@@ -2,6 +2,8 @@ import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
+import { faHeartbeat, faComments, faPlusCircle, faPaw, faUser } from '@fortawesome/free-solid-svg-icons';
 import LoginPage from './screens/LoginPage';
 import PairScreen from './screens/PairScreen';
 import ChatroomScreen from './screens/ChatRoomScreen';
@@ -19,27 +21,52 @@ function MainTabs() {
       <Tab.Screen 
         name="Pair" 
         component={PairScreen} 
-        options={{ headerShown: false }}
+        options={{ 
+          headerShown: false, 
+          tabBarIcon: ({ color, size }) => (
+            <FontAwesomeIcon icon={faHeartbeat} color={color} size={size} />
+          ),
+        }}
       />
       <Tab.Screen 
         name="Chat" 
         component={ChatroomScreen} 
-        options={{ headerShown: false }}
+        options={{ 
+          headerShown: false, 
+          tabBarIcon: ({ color, size }) => (
+            <FontAwesomeIcon icon={faComments} color={color} size={size} />
+          ),
+        }}
       />
       <Tab.Screen 
         name="AddStory" 
         component={AddStoryScreen} 
-        options={{ headerShown: false }}
+        options={{ 
+          headerShown: false, 
+          tabBarIcon: ({ color, size }) => (
+            <FontAwesomeIcon icon={faPlusCircle} color={color} size={size} />
+          ),
+        }}
       />
       <Tab.Screen 
         name="Pet" 
         component={PetScreen} 
-        options={{ headerShown: false }}
+        options={{ 
+          headerShown: false, 
+          tabBarIcon: ({ color, size }) => (
+            <FontAwesomeIcon icon={faPaw} color={color} size={size} />
+          ),
+        }}
       />
       <Tab.Screen 
         name="Profile" 
         component={ProfileScreen} 
-        options={{ headerShown: false }}
+        options={{ 
+          headerShown: false, 
+          tabBarIcon: ({ color, size }) => (
+            <FontAwesomeIcon icon={faUser} color={color} size={size} />
+          ),
+        }}
       />
     </Tab.Navigator>
   );

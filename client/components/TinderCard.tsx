@@ -81,7 +81,7 @@ const TinderCard: React.FC<TinderCardProps> = ({ profile, onSwipeLeft, onSwipeRi
       <Image source={{ uri: profile.image }} style={styles.cardImage} />
       <View style={styles.cardDetails}>
         <Text style={styles.profileName}>{profile.name}</Text>
-        <Text style={styles.profileAge}>{profile.age + '歲'}</Text>
+        <Text style={styles.profileAge}>{profile.age + ' years old'}</Text>
         <Text style={styles.profileBio}>{profile.bio}</Text>
       </View>
     </Animated.View>
